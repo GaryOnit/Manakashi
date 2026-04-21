@@ -16,6 +16,7 @@ import GallerySection from './components/GallerySection.jsx';
 import SpecialSection from './components/SpecialSection.jsx';
 import DownloadSection from './components/DownloadSection.jsx';
 import Footer from './components/Footer.jsx';
+import { asset } from './utils/asset.js';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -83,7 +84,7 @@ export default function App() {
             className="fixed top-5 right-5 z-[1050] hover:scale-110 transition-transform drop-shadow-lg"
           >
             <div className="relative w-16 h-16">
-              <img src="/images/common/side-ball.svg" alt="" className="w-16 h-16" />
+              <img src={asset('/images/common/side-ball.svg')} alt="" className="w-16 h-16" />
               <Menu size={26} className="absolute inset-0 m-auto text-white pointer-events-none" />
             </div>
           </motion.button>
@@ -101,7 +102,7 @@ export default function App() {
       {/* Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <img
-          src="/images/common/bg.jpg"
+          src={asset('/images/common/bg.jpg')}
           alt=""
           className="absolute inset-0 w-full h-full object-cover bg-drift opacity-20"
         />
@@ -110,12 +111,12 @@ export default function App() {
 
       {/* 左侧无限滚动（从上往下） */}
       <div className="fixed left-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
-        <InfiniteScroll src="/images/common/bg_infinite-txt-left.png" direction="down" speed={30} />
+        <InfiniteScroll src={asset('/images/common/bg_infinite-txt-left.png')} direction="down" speed={30} />
       </div>
 
       {/* 右侧无限滚动（从下往上） */}
       <div className="fixed right-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
-        <InfiniteScroll src="/images/common/bg_infinite-txt-right.png" direction="up" speed={30} />
+        <InfiniteScroll src={asset('/images/common/bg_infinite-txt-right.png')} direction="up" speed={30} />
       </div>
 
       <main className="relative z-10">

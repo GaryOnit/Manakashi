@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import { asset } from '../utils/asset.js';
 
 export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
   return (
@@ -19,7 +20,7 @@ export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
 
           {/* 左侧 Q 版小人 */}
           <motion.img
-            src="/images/common/q1.png"
+            src={asset('/images/common/q1.png')}
             animate={{ y: [0, -20, 0], rotate: [-5, 5, -5] }}
             whileHover={{ scale: 1.12, rotate: 10, y: -30 }}
             transition={{
@@ -32,14 +33,14 @@ export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
 
           {/* 中间标题图 */}
           <img
-            src="/images/common/title.png"
+            src={asset('/images/common/title.png')}
             alt="TITLE"
             className="h-[85vh] w-auto object-contain relative z-10 drop-shadow-[0_10px_30px_rgba(230,80,151,0.2)]"
           />
 
           {/* 右侧 Q 版小人 */}
           <motion.img
-            src="/images/common/q2.png"
+            src={asset('/images/common/q2.png')}
             animate={{ y: [0, -20, 0], rotate: [5, -5, 5] }}
             whileHover={{ scale: 1.12, rotate: -10, y: -30 }}
             transition={{

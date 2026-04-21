@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Twitter, Github, Music } from 'lucide-react';
+import { asset } from '../utils/asset.js';
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -49,7 +50,7 @@ export default function Footer() {
             aria-label="ページトップへ"
           >
             <img
-              src="/images/common/btn_pagetop.png"
+              src={asset('/images/common/btn_pagetop.png')}
               alt="PAGE TOP"
               className="w-20 md:w-28 h-auto drop-shadow-xl"
             />

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Monitor, Smartphone, Play, Download, Cpu, HardDrive, MemoryStick, ChevronRight } from 'lucide-react';
 import { SYSTEM_REQUIREMENTS } from '../data/index.js';
 import SectionTitle from './SectionTitle.jsx';
+import { asset } from '../utils/asset.js';
 
 const DOWNLOAD_URL = 'https://pan.baidu.com/s/1D0HeZGkUWkyGHKqUn0BRiw?pwd=jbbs';
 
@@ -21,7 +22,7 @@ export default function DownloadSection() {
 
       {/* 左侧冰箱贴：img_intro-pick.png — 移动端隐藏 */}
       <motion.img
-        src="/images/download/img_intro-pick.png"
+        src={asset('/images/download/img_intro-pick.png')}
         alt=""
         className="absolute left-6 top-[15%] w-64 md:w-96 pointer-events-none select-none drop-shadow-lg hidden md:block"
         style={{ rotate: '-5deg' }}
@@ -33,7 +34,7 @@ export default function DownloadSection() {
 
       {/* 右侧冰箱贴：txt_novel-comic-promo.png — 移动端隐藏 */}
       <motion.img
-        src="/images/download/txt_novel-comic-promo.png"
+        src={asset('/images/download/txt_novel-comic-promo.png')}
         alt=""
         className="absolute right-6 bottom-[20%] w-56 md:w-82 pointer-events-none select-none drop-shadow-lg hidden md:block"
         style={{ rotate: '4deg' }}

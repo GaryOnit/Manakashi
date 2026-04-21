@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 import SectionTitle from './SectionTitle.jsx';
+import { asset } from '../utils/asset.js';
 
 export default function StorySection() {
   return (
@@ -55,7 +56,7 @@ export default function StorySection() {
           <div className="relative group">
             <div className="absolute inset-0 bg-sakura-100 rounded-2xl rotate-3 group-hover:rotate-1 transition-transform shadow-sm" />
             <img
-              src="/images/story/prologue.jpg"
+              src={asset('/images/story/prologue.jpg')}
               alt="Story CG"
               className="rounded-2xl shadow-xl relative z-10 transition-all duration-700 w-full object-cover"
             />

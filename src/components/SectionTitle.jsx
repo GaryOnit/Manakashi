@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { asset } from '../utils/asset.js';
 
 /**
  * SectionTitle — 带 heart-clipped 效果的区块标题
@@ -28,7 +29,7 @@ export default function SectionTitle({ enText, zhText, center = false, className
       {/* 英文大标题 */}
       <div className="relative">
         <img
-          src="/images/common/img-deco-heading.png"
+          src={asset('/images/common/img-deco-heading.png')}
           alt=""
           aria-hidden="true"
           className="absolute -top-5 -left-8 w-9 h-9 object-contain select-none pointer-events-none"

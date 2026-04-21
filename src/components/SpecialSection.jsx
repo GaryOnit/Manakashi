@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import { Music, Sparkles, Heart, X, ChevronRight, Share2 } from 'lucide-react';
 import { SPECIAL_ITEMS } from '../data/index.js';
 import SectionTitle from './SectionTitle.jsx';
+import { asset } from '../utils/asset.js';
 
 const ICONS = { soundtrack: Music, artbook: Sparkles, story: Heart };
 
@@ -95,7 +96,7 @@ export default function SpecialSection() {
       {/* 背景图 */}
       <div className="absolute inset-0">
         <img
-          src="/images/special/bg.jpg"
+          src={asset('/images/special/bg.jpg')}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />

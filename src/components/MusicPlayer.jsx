@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Music, Pause, Play, SkipForward } from 'lucide-react';
+import { asset } from '../utils/asset.js';
 
 const PLAYLIST = [
-  '/audio/speciosum.mp3',
-  '/audio/Ragwort.mp3',
+  asset('/audio/speciosum.mp3'),
+  asset('/audio/Ragwort.mp3'),
 ];
 
 export default function MusicPlayer() {

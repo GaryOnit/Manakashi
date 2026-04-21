@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Heart } from 'lucide-react';
 import { SECTIONS } from '../data/index.js';
+import { asset } from '../utils/asset.js';
 
 export default function SideMenu({ isOpen, onClose, activeSection }) {
   return (
@@ -36,7 +37,7 @@ export default function SideMenu({ isOpen, onClose, activeSection }) {
             <div
               className="absolute inset-0 opacity-[0.04] pointer-events-none"
               style={{
-                backgroundImage: "url('/images/common/bg_pattern-head-ht.png')",
+                backgroundImage: `url('${asset('/images/common/bg_pattern-head-ht.png')}')`,
                 backgroundRepeat: 'repeat',
                 backgroundSize: '120px',
               }}

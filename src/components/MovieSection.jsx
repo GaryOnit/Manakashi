@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { asset } from '../utils/asset.js';
 
 export default function MovieSection() {
   const videoRef = useRef(null);
@@ -49,8 +50,8 @@ export default function MovieSection() {
         {/* 视频主体 */}
         <video
           ref={videoRef}
-          src="/video/movie.mp4"
-          poster="/images/movie/movie-cover.png"
+          src={asset('/video/movie.mp4')}
+          poster={asset('/images/movie/movie-cover.png')}
           className="w-full h-full object-cover"
           playsInline
           preload="none"
@@ -59,7 +60,7 @@ export default function MovieSection() {
 
         {/* 左上角装饰图 - 修改：使用负边距向左上偏移 */}
         <img
-          src="/images/movie/bg-deco-movie.png"
+          src={asset('/images/movie/bg-deco-movie.png')}
           className="absolute -top-2 -left-6 w-26 md:w-40 pointer-events-none z-50 drop-shadow-xl"
           alt=""
         />
@@ -87,7 +88,7 @@ export default function MovieSection() {
               <motion.div
                 className="absolute inset-0"
                 style={{
-                  backgroundImage: 'url(/images/common/bg.jpg)',
+                  backgroundImage: `url(${asset('/images/common/bg.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   mixBlendMode: 'screen',
@@ -103,7 +104,7 @@ export default function MovieSection() {
 
                 {/* 左侧文字 "PLAY" */}
                 <motion.img
-                  src="/images/movie/txt_movie-play.png"
+                  src={asset('/images/movie/txt_movie-play.png')}
                   className="h-16 md:h-24 w-auto object-contain z-10"
                   variants={{
                     idle: { x: 0 },
@@ -142,7 +143,7 @@ export default function MovieSection() {
 
                 {/* 右侧文字 "MOVIE" */}
                 <motion.img
-                  src="/images/movie/txt_movie-movie.png"
+                  src={asset('/images/movie/txt_movie-movie.png')}
                   className="h-16 md:h-24 w-auto object-contain z-10"
                   variants={{
                     idle: { x: 0 },

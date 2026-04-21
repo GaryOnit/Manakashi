@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CHARACTERS } from '../data/index.js';
 import SectionTitle from './SectionTitle.jsx';
+import { asset } from '../utils/asset.js';
 
 export default function CharacterSection() {
   const [activeChar, setActiveChar] = useState(0);
@@ -44,7 +45,7 @@ export default function CharacterSection() {
                   </div>
                   <div className="flex items-center justify-center md:justify-start gap-2">
                     <span className="inline-flex items-center justify-center relative w-9 h-9 shrink-0">
-                      <img src="/images/common/side-ball.svg" alt="" className="absolute inset-0 w-full h-full" />
+                      <img src={asset('/images/common/side-ball.svg')} alt="" className="absolute inset-0 w-full h-full" />
                       <span className="relative z-10 font-serif text-[10px] tracking-widest text-white leading-none">CV</span>
                     </span>
                     <span className="font-serif text-sm tracking-widest text-ink-700">{CHARACTERS[activeChar].cv}</span>

@@ -109,7 +109,7 @@
 @layer components {
   .heart-clipped-text {
     background-image:
-      url('/images/common/bg_pattern-head-ht.png'),
+      url('../public/images/common/bg_pattern-head-ht.png'),
       radial-gradient(ellipse at 0% 100%, #ffb7c5 0%, transparent 60%),
       linear-gradient(135deg, #f56486 0%, #ffb7c5 55%, #ff8ca6 100%);
     background-size: auto, cover, cover;
