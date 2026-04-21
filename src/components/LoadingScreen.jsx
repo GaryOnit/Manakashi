@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { asset } from '../utils/asset.js';
+
+const PRELOAD_IMAGES = [
+  '/images/common/q1.png',
+  '/images/common/q2.png',
+  '/images/common/title.png',
+  '/images/common/bg.jpg',
+];
 
 export default function LoadingScreen({ onFinish }) {
   const [percent, setPercent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPercent(prev => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(onFinish, 1000);
-          return 100;
-        }
-        return prev + Math.floor(Math.random() * 3) + 1;
-      });
-    }, 100);
-    return () => clearInterval(interval);
+    let loaded = 0;
+    const total = PRELOAD_IMAGES.length;
+
+    const promises = PRELOAD_IMAGES.map(src =>
+      new Promise(resolve => {
+        const img = new Image();
+        img.onload = img.onerror = () => {
+          loaded += 1;
+          setPercent(Math.round((loaded / total) * 100));
+          resolve();
+        };
+        img.src = asset(src);
+      })
+    );
+
+    Promise.all(promises).then(() => {
+      setTimeout(onFinish, 800);
+    });
   }, [onFinish]);
 
   return (
