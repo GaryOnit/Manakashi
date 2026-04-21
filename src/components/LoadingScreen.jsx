@@ -12,9 +12,9 @@ export default function LoadingScreen({ onFinish }) {
           setTimeout(onFinish, 1000);
           return 100;
         }
-        return prev + Math.floor(Math.random() * 5) + 1;
+        return prev + Math.floor(Math.random() * 3) + 1;
       });
-    }, 50);
+    }, 100);
     return () => clearInterval(interval);
   }, [onFinish]);
 
