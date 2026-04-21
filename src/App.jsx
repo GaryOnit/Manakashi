@@ -64,7 +64,7 @@ export default function App() {
   }, [drawerOpen]);
 
   return (
-    <div className="relative selection:bg-sakura-500/20 selection:text-ink-900">
+    <div className="relative overflow-x-hidden selection:bg-sakura-500/20 selection:text-ink-900">
       <AnimatePresence>
         {isLoading && <LoadingScreen onFinish={() => setIsLoading(false)} />}
       </AnimatePresence>
@@ -110,12 +110,12 @@ export default function App() {
       </div>
 
       {/* 左侧无限滚动（从上往下） */}
-      <div className="fixed left-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
+      <div className="hidden md:block fixed left-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
         <InfiniteScroll src={asset('/images/common/bg_infinite-txt-left.png')} direction="down" speed={30} />
       </div>
 
       {/* 右侧无限滚动（从下往上） */}
-      <div className="fixed right-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
+      <div className="hidden md:block fixed right-0 top-0 w-20 h-full overflow-hidden pointer-events-none z-0">
         <InfiniteScroll src={asset('/images/common/bg_infinite-txt-right.png')} direction="up" speed={30} />
       </div>
 
