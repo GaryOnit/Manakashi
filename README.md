@@ -11,7 +11,6 @@
 - **样式**: Tailwind CSS v4（通过 `@tailwindcss/vite` 插件，无需 `tailwind.config.js`）
 - **动画**: `motion/react`（即 Framer Motion，包名为 `motion`）
 - **图标**: `lucide-react`
-- **其他**: `@google/genai`（AI Studio 注入，本地无需配置）
 
 ## 启动方式
 
