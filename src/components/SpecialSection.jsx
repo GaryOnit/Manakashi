@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import { Music, Sparkles, Heart, X, ChevronRight, Share2 } from 'lucide-react';
 import { SPECIAL_ITEMS } from '../data/index.js';
 import SectionTitle from './SectionTitle.jsx';
+import Img from './Img.jsx';
 import { asset } from '../utils/asset.js';
 
 const ICONS = { soundtrack: Music, artbook: Sparkles, story: Heart };
@@ -47,8 +48,9 @@ const HoverCard = ({ item, onClick }) => {
         className="absolute inset-0 bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden group-hover:bg-sakura-500/10 transition-colors duration-500"
       >
         {/* 背景图蒙层 */}
-        <img
+        <Img
           src={item.cover}
+          webpSrc={item.coverWebP}
           className="absolute inset-0 w-full h-full object-cover mix-blend-soft-light opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-1000"
           alt={item.title}
         />
@@ -95,8 +97,10 @@ export default function SpecialSection() {
     <section id="special" className="py-32 relative overflow-hidden">
       {/* 背景图 */}
       <div className="absolute inset-0">
-        <img
+        <Img
           src={asset('/images/special/bg.jpg')}
+          webpSrc={asset('/images/special/bg.webp')}
+          mobileSrc={asset('/images/special/bg-mobile.webp')}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -176,7 +180,13 @@ export default function SpecialSection() {
                 exit={{ x: -50, opacity: 0 }}
                 className="md:col-span-7 relative aspect-[16/10] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(245,100,134,0.25)] border border-white/10"
               >
-                <img src={activeItem.content} className="w-full h-full object-cover" alt={activeItem.title} />
+                <Img
+                  src={activeItem.content}
+                  webpSrc={activeItem.contentWebP}
+                  mobileSrc={activeItem.contentMobileWebP}
+                  className="w-full h-full object-cover"
+                  alt={activeItem.title}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
                 
                 <div className="absolute top-8 left-8">

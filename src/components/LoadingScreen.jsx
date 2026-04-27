@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { asset } from '../utils/asset.js';
 
+// 预加载 WebP 版本（现代浏览器）；旧浏览器遇到 404 会触发 onerror→resolve，不阻塞加载
 const PRELOAD_IMAGES = [
-  '/images/common/q1.png',
-  '/images/common/q2.png',
-  '/images/common/title.png',
+  '/images/common/q1.webp',
+  '/images/common/q2.webp',
+  '/images/common/title.webp',
   '/images/common/bg.jpg',
 ];
 

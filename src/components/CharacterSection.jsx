@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CHARACTERS } from '../data/index.js';
 import SectionTitle from './SectionTitle.jsx';
+import Img from './Img.jsx';
 import { asset } from '../utils/asset.js';
 
 export default function CharacterSection() {
@@ -67,8 +68,9 @@ export default function CharacterSection() {
                         className="absolute -inset-1 rounded-full blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity"
                         style={{ backgroundColor: char.color }}
                       />
-                      <img
+                      <Img
                         src={char.avatar}
+                        webpSrc={char.avatarWebP}
                         alt={char.name}
                         className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 relative z-10 box-content"
                         style={{ borderColor: activeChar === idx ? char.color : 'transparent' }}
@@ -103,8 +105,10 @@ export default function CharacterSection() {
                   className="relative h-full w-full"
                 >
                   <div className="absolute inset-0 bg-sakura-300/10 blur-[100px] rounded-full" />
-                  <img
+                  <Img
                     src={CHARACTERS[activeChar].image}
+                    webpSrc={CHARACTERS[activeChar].imageWebP}
+                    mobileSrc={CHARACTERS[activeChar].imageMobileWebP}
                     alt={CHARACTERS[activeChar].name}
                     className="h-full w-full object-contain rounded-3xl relative z-10"
                   />

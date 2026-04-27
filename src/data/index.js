@@ -21,7 +21,10 @@ export const CHARACTERS = [
     quote: "Even if the snow never melts, I'll still be waiting for you under this tree.",
     color: '#FFB7C5',
     image: asset('/images/characters/chr_0a.png'),
+    imageWebP: asset('/images/characters/chr_0a.webp'),
+    imageMobileWebP: asset('/images/characters/chr_0a-mobile.webp'),
     avatar: asset('/images/characters/avatar1.png'),
+    avatarWebP: asset('/images/characters/avatar1.webp'),
   },
   {
     id: 'aimi',
@@ -34,7 +37,10 @@ export const CHARACTERS = [
     quote: "The moon is beautiful tonight, don't you think? But beauty is often a trap.",
     color: '#A0C4FF',
     image: asset('/images/characters/chr_1a.png'),
+    imageWebP: asset('/images/characters/chr_1a.webp'),
+    imageMobileWebP: asset('/images/characters/chr_1a-mobile.webp'),
     avatar: asset('/images/characters/avatar2.png'),
+    avatarWebP: asset('/images/characters/avatar2.webp'),
   },
   {
     id: 'yuko',
@@ -47,7 +53,10 @@ export const CHARACTERS = [
     quote: "Hey! Don't you dare give up now. We're in this together, remember?",
     color: '#FFADAD',
     image: asset('/images/characters/chr_2.png'),
+    imageWebP: asset('/images/characters/chr_2.webp'),
+    imageMobileWebP: asset('/images/characters/chr_2-mobile.webp'),
     avatar: asset('/images/characters/avatar3.png'),
+    avatarWebP: asset('/images/characters/avatar3.webp'),
   },
 ];
 
@@ -66,21 +75,28 @@ export const SPECIAL_ITEMS = [
     title: 'Original Soundtrack',
     desc: '時を超える調べ、全楽曲フル収録。',
     cover: asset('/images/special/cover1.png'),
+    coverWebP: asset('/images/special/cover1.webp'),
     content: asset('/images/special/content1.jpg'),
+    contentWebP: null, // 原 AVIF 压缩率优于 WebP，保留原图
   },
   {
     key: 'artbook',
     title: 'Official Artbook',
     desc: '秘蔵原画で綴る、百余頁のキャラ設定。',
     cover: asset('/images/special/cover2.png'),
+    coverWebP: asset('/images/special/cover2.webp'),
     content: asset('/images/special/content2.jpg'),
+    contentWebP: asset('/images/special/content2.webp'),
+    contentMobileWebP: asset('/images/special/content2-mobile.webp'),
   },
   {
     key: 'story',
     title: 'Secret Episode',
     desc: '語られぬ恋心、秘められた後日談。',
     cover: asset('/images/special/cover3.png'),
+    coverWebP: asset('/images/special/cover3.webp'),
     content: asset('/images/special/content3.jpg'),
+    contentWebP: asset('/images/special/content3.webp'),
   },
 ];
 

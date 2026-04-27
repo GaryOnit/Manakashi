@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Twitter, Github, Music } from 'lucide-react';
+import Img from './Img.jsx';
 import { asset } from '../utils/asset.js';
 
 export default function Footer() {
@@ -49,8 +50,9 @@ export default function Footer() {
             className="translate-x-[5%] md:translate-x-[15%] cursor-pointer"
             aria-label="ページトップへ"
           >
-            <img
+            <Img
               src={asset('/images/common/btn_pagetop.png')}
+              webpSrc={asset('/images/common/btn_pagetop.webp')}
               alt="PAGE TOP"
               className="w-20 md:w-28 h-auto drop-shadow-xl"
             />

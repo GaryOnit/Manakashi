@@ -51,7 +51,7 @@ export default function MovieSection() {
         <video
           ref={videoRef}
           src={asset('/video/movie.mp4')}
-          poster={asset('/images/movie/movie-cover.png')}
+          poster={asset('/images/movie/movie-cover.webp')}
           className="w-full h-full object-cover"
           playsInline
           preload="none"

@@ -21,16 +21,20 @@ export default function DownloadSection() {
     <section id="download" className="py-32 relative border-t border-sakura-100 bg-sakura-50/40 backdrop-blur-sm">
 
       {/* 左侧冰箱贴：img_intro-pick.png — 移动端隐藏 */}
-      <motion.img
-        src={asset('/images/download/img_intro-pick.png')}
-        alt=""
-        className="absolute left-6 top-[15%] w-64 md:w-96 pointer-events-none select-none drop-shadow-lg hidden md:block"
-        style={{ rotate: '-5deg' }}
-        initial={{ opacity: 0, y: 20, rotate: '-8deg' }}
-        whileInView={{ opacity: 1, y: 0, rotate: '-5deg' }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      />
+      <picture style={{ display: 'contents' }}>
+        <source media="(max-width: 767px)" srcSet={asset('/images/download/img_intro-pick-mobile.webp')} type="image/webp" />
+        <source srcSet={asset('/images/download/img_intro-pick.webp')} type="image/webp" />
+        <motion.img
+          src={asset('/images/download/img_intro-pick.png')}
+          alt=""
+          className="absolute left-6 top-[15%] w-64 md:w-96 pointer-events-none select-none drop-shadow-lg hidden md:block"
+          style={{ rotate: '-5deg' }}
+          initial={{ opacity: 0, y: 20, rotate: '-8deg' }}
+          whileInView={{ opacity: 1, y: 0, rotate: '-5deg' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </picture>
 
       {/* 右侧冰箱贴：txt_novel-comic-promo.png — 移动端隐藏 */}
       <motion.img

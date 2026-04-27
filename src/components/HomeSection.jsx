@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { asset } from '../utils/asset.js';
+import Img from './Img.jsx';
 
 export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
   return (
@@ -19,37 +20,46 @@ export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
           <div className="absolute -inset-10 bg-sakura-300/10 blur-[100px] rounded-full pointer-events-none" />
 
           {/* 左侧 Q 版小人 */}
-          <motion.img
-            src={asset('/images/common/q1.png')}
-            animate={{ y: [0, -20, 0], rotate: [-5, 5, -5] }}
-            whileHover={{ scale: 1.12, rotate: 10, y: -30 }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-              rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-              scale: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
-          />
+          <picture style={{ display: 'contents' }}>
+            <source media="(max-width: 767px)" srcSet={asset('/images/common/q1-mobile.webp')} type="image/webp" />
+            <source srcSet={asset('/images/common/q1.webp')} type="image/webp" />
+            <motion.img
+              src={asset('/images/common/q1.png')}
+              animate={{ y: [0, -20, 0], rotate: [-5, 5, -5] }}
+              whileHover={{ scale: 1.12, rotate: 10, y: -30 }}
+              transition={{
+                y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                scale: { type: 'spring', stiffness: 300, damping: 15 },
+              }}
+              className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
+            />
+          </picture>
 
           {/* 中间标题图 */}
-          <img
+          <Img
             src={asset('/images/common/title.png')}
+            webpSrc={asset('/images/common/title.webp')}
             alt="TITLE"
             className="h-[85vh] w-auto object-contain relative z-10 drop-shadow-[0_10px_30px_rgba(230,80,151,0.2)]"
           />
 
           {/* 右侧 Q 版小人 */}
-          <motion.img
-            src={asset('/images/common/q2.png')}
-            animate={{ y: [0, -20, 0], rotate: [5, -5, 5] }}
-            whileHover={{ scale: 1.12, rotate: -10, y: -30 }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-              rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-              scale: { type: 'spring', stiffness: 300, damping: 15 },
-            }}
-            className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
-          />
+          <picture style={{ display: 'contents' }}>
+            <source media="(max-width: 767px)" srcSet={asset('/images/common/q2-mobile.webp')} type="image/webp" />
+            <source srcSet={asset('/images/common/q2.webp')} type="image/webp" />
+            <motion.img
+              src={asset('/images/common/q2.png')}
+              animate={{ y: [0, -20, 0], rotate: [5, -5, 5] }}
+              whileHover={{ scale: 1.12, rotate: -10, y: -30 }}
+              transition={{
+                y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                scale: { type: 'spring', stiffness: 300, damping: 15 },
+              }}
+              className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
+            />
+          </picture>
         </motion.div>
 
         <motion.div
