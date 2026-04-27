@@ -116,3 +116,11 @@ galgame-official-site/
 | index.css | 删除重复的 `scroll-down/up` keyframes | 减少 CSS 冗余 |
 | MovieSection.jsx | video 加 `preload="none"` | 页面加载时不预请求视频资源 |
 | DownloadSection.jsx | shimmer/图标旋转改用 `whileHover`，删除 hovering state | hover 动画完全绕过 React 渲染层 |
+| scripts/convert-to-webp.mjs | PNG/JPG → WebP（quality 85/82），转大自动丢弃，宽 >900px 额外生成 `-mobile.webp`（480px） | FCP 预加载体积 ~2.83MB → ~387KB（↓86%） |
+| Img.jsx | `<picture style="display:contents">` 封装，props: `src/webpSrc/mobileSrc`；`motion.img` 手动包裹 `<picture>` | 现代浏览器用 WebP，旧浏览器自动降级原图 |
+
+### 图片 WebP 覆盖范围
+转换脚本：`npm run convert-images`（`--force` 强制重生成）
+**有 WebP**：characters/avatar1~3、chr_0a/1a/2；common/btn_pagetop、q1/q2/title、top_anim；download/img_intro-pick；movie/movie-cover；special/bg、content2/3、cover1~3（宽图含 `-mobile` 变体）
+**无 WebP（保留原图）**：`common/bg.jpg`、`story/prologue.jpg`、`download/txt_novel-comic-promo.png`、`movie/txt_movie-*.png`、`special/content1.jpg`
+`data/index.js` 中 CHARACTERS 含 `imageWebP/imageMobileWebP/avatarWebP`；SPECIAL_ITEMS 含 `coverWebP/contentWebP/contentMobileWebP`（无 WebP 时为 `null`）。
