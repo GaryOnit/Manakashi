@@ -32,7 +32,7 @@ export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
                 rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
                 scale: { type: 'spring', stiffness: 300, damping: 15 },
               }}
-              className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
+              className="hidden sm:block w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
             />
           </picture>
 
@@ -57,7 +57,7 @@ export default function HomeSection({ isLoading, heroOpacity, heroScale }) {
                 rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
                 scale: { type: 'spring', stiffness: 300, damping: 15 },
               }}
-              className="w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
+              className="hidden sm:block w-36 md:w-56 h-auto object-contain flex-shrink-0 relative z-10 cursor-pointer"
             />
           </picture>
         </motion.div>

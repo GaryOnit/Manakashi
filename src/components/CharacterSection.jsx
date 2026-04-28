@@ -84,7 +84,7 @@ export default function CharacterSection() {
 
           {/* Illustration */}
           <motion.div
-            className="flex-1 order-1 md:order-2 relative perspective-1000 h-[280px] sm:h-[400px] md:h-[600px] w-full max-w-md"
+            className="hidden md:block flex-1 order-1 md:order-2 relative perspective-1000 md:h-[600px] w-full max-w-md"
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
