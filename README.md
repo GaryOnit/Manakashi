@@ -122,7 +122,7 @@ galgame-official-site/
 ### 图片 WebP 覆盖范围
 转换脚本：`npm run convert-images`（`--force` 强制重生成）
 
-**有 WebP**：characters/avatar1~3、chr_0a/1a/2；common/btn_pagetop、q1/q2/title、top_anim；download/img_intro-pick；movie/movie-cover；special/bg、content2/3、cover1~3（宽图含 `-mobile` 变体）
+**有 WebP**：`characters/avatar1~3`、`chr_0a/1a/2`；`common/btn_pagetop`、`q1/q2/title`、`top_anim`；`download/img_intro-pick`；`movie/movie-cover`；`special/bg`、`content2/3`、`cover1~3（宽图含 `-mobile` 变体）`
 
 **无 WebP（保留原图）**：`common/bg.jpg`、`story/prologue.jpg`、`download/txt_novel-comic-promo.png`、`movie/txt_movie-*.png`、`special/content1.jpg`
 
